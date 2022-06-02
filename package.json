@@ -1,0 +1,27 @@
+{
+  "name": "MSP3",
+  "version": "1.0.0",
+  "description": "The beginnings of something great!\r This Repo will be updated as the prject goes along!",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbibbs94/MSP3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbibbs94/MSP3/issues"
+  },
+  "homepage": "https://github.com/cbibbs94/MSP3#readme"
+}
