@@ -9,6 +9,7 @@ const NewConsultForm = () => {
         question: '',
         previousMentorship: '',
         contactInfo: '',
+        preferredContact: '',
     })
 
     
@@ -74,14 +75,13 @@ const NewConsultForm = () => {
                 {/* Previous Mentorship */}
                 <div>
                     <label htmlFor="previousMentorship">Have you ever worked with a Mentor, Business Advisor, or Business Success Coach before?</label>
-                    <div>
+                    <div onChange= { e => setConsultInfo({ ...consultInfo, previousMentorship: e.target.value })}>
                         <input
                             value={consultInfo.previousMentorship}
-                            onChange={ e => setConsultInfo({ ...consultInfo, previousMentorship: e.target.value })}
                             type='radio'
-                            id='previousMentorship'
                             name='previousMentorship'
                         />
+                        
                     </div>
                 </div>
                 {/* Preffered Contact Method */}

@@ -14,6 +14,6 @@ app.get('/', (req, res) => {
 })
 
 //Port Connection
-app.listen(process.env.PORT, () => {
-    console.log("Alright everyone wake up, LET'S LOOK ALIVE!!")
+app.listen(PORT, () => {
+    console.log("Alright people wake up, LET'S LOOK ALIVE!!")
 })
