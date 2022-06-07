@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const NewConsultForm = () => {
     
@@ -12,6 +12,19 @@ const NewConsultForm = () => {
         preferredContact: '',
     })
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        await fetch('http://localhost:5001/ConsultForm', {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(consultInfo)
+        })
+
+    }
+
     
 
     return (
@@ -20,7 +33,7 @@ const NewConsultForm = () => {
             <p>
                 Please fill out the form below to request a meeting with our Head Consultant
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
                 {/* First Name */}
                 <div className='form-group' >
                     <label htmlFor="firstName">First Name</label>
@@ -72,20 +85,82 @@ const NewConsultForm = () => {
                         name='question'
                     />
                 </div>
+
                 {/* Previous Mentorship */}
                 <div>
                     <label htmlFor="previousMentorship">Have you ever worked with a Mentor, Business Advisor, or Business Success Coach before?</label>
-                    <div onChange= { e => setConsultInfo({ ...consultInfo, previousMentorship: e.target.value })}>
+                    <div onChange= {e => setConsultInfo({ ...consultInfo, previousMentorship: e.target.value})}>
                         <input
                             value={consultInfo.previousMentorship}
                             type='radio'
                             name='previousMentorship'
-                        />
-                        
+                            id='Mentor'
+                        /> Mentor
+                        <input
+                            value={consultInfo.previousMentorship}
+                            type='radio'
+                            name='previousMentorship'
+                            id='Business Advisor'
+                        /> Business Advisor
+                        <input
+                            value={consultInfo.previousMentorship}
+                            type='radio'
+                            name='previousMentorship'
+                            id='Business Success Coach'
+                        />Business Success Coach
+                        <input
+                            value={consultInfo.previousMentorship}
+                            type='radio'
+                            name='previousMentorship'
+                            id='Combonation'
+                        />Combonation
+                        <input
+                            value={consultInfo.previousMentorship}
+                            type='radio'
+                            name='previousMentorship'
+                            id='None'
+                        />None
                     </div>
                 </div>
                 {/* Preffered Contact Method */}
+                <div>
+                    <input
+                        value={consultInfo.preferredContact}
+                        type='radio'
+                        name='preferredContact'
+                        id='E-mail'
+                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                    />E-mail
+                    <input
+                        value={consultInfo.preferredContact}
+                        type='radio'
+                        name='preferredContact'
+                        id='Video Conference'
+                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                    />Video Conference
+                    <input
+                        value={consultInfo.preferredContact}
+                        type='radio'
+                        name='preferredContact'
+                        id='Phone Conference'
+                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                    />Phone Conference
+                </div>
+                
                 {/* Contact info */}
+                <div>
+                    <label>Phone Number</label>
+                    <input 
+                        value={consultInfo.contactInfo}
+                        onChange={e => setConsultInfo({...consultInfo, contactInfo: e.target.value})}
+                        className='form-control'
+                        id='contactInfo'
+                        name='contactInfo'
+                        type='tel'
+                        pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                    />
+                </div>
+                <input className='btn btn-primary' type='submit' value='Submit Form' />
             </form>
         
            

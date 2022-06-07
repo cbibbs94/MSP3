@@ -34,3 +34,7 @@ const consultFormSchema = new Schema({
 
 
 })
+
+// model and export
+const ConsultForm = mongoose.model('Consultform', consultFormSchema)
+module.exports = ConsultForm

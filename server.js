@@ -2,9 +2,12 @@
 require('dotenv').config()
 const express = require('express')
 
-// Configs and App Initialization
+// Middleware and Configs
 const PORT = process.env.PORT
 const app = express()
+
+
+
 
 //Routes
 app.get('/', (req, res) => {
@@ -12,6 +15,9 @@ app.get('/', (req, res) => {
         message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff! API Coming soon!'
     })
 })
+
+//Consultform Routes
+app.use('/consultForm', require('./controllers/consult_controller.js'))
 
 //Port Connection
 app.listen(PORT, () => {
