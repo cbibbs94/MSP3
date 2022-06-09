@@ -1,18 +1,21 @@
 // Server Dependencies
 require('dotenv').config()
 const express = require('express')
+const cors =require('cors')
+//const bodyParser = require('body-parser')
 
 // Middleware and Configs
 const PORT = process.env.PORT
 const app = express()
-
+app.use(cors())
+app.use(express.json())
 
 
 
 //Routes
 app.get('/', (req, res) => {
     res.json({
-        message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff! API Coming soon!'
+        message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
     })
 })
 

@@ -8,21 +8,21 @@ const NewConsultForm = () => {
         email: '', 
         question: '',
         previousMentorship: '',
-        contactInfo: '',
+        contactInfo: {},
         preferredContact: '',
     })
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await fetch('http://localhost:5001/ConsultForm', {
+        await fetch('http://localhost:5001/consultForm', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
             },
             body: JSON.stringify(consultInfo)
         })
-
+        
     }
 
     
@@ -89,61 +89,53 @@ const NewConsultForm = () => {
                 {/* Previous Mentorship */}
                 <div>
                     <label htmlFor="previousMentorship">Have you ever worked with a Mentor, Business Advisor, or Business Success Coach before?</label>
-                    <div onChange= {e => setConsultInfo({ ...consultInfo, previousMentorship: e.target.value})}>
+                    <div onChange= {e =>{console.log(e.target.value); setConsultInfo({ ...consultInfo, previousMentorship: e.target.value})}}>
                         <input
-                            value={consultInfo.previousMentorship}
                             type='radio'
                             name='previousMentorship'
-                            id='Mentor'
+                            value='Mentor'
                         /> Mentor
-                        <input
-                            value={consultInfo.previousMentorship}
+                        <input                            
                             type='radio'
                             name='previousMentorship'
-                            id='Business Advisor'
+                            value='Business Advisor'
                         /> Business Advisor
-                        <input
-                            value={consultInfo.previousMentorship}
+                        <input 
                             type='radio'
                             name='previousMentorship'
-                            id='Business Success Coach'
+                            value='Business Success Coach'
                         />Business Success Coach
                         <input
-                            value={consultInfo.previousMentorship}
                             type='radio'
                             name='previousMentorship'
-                            id='Combonation'
+                            value='Combonation'
                         />Combonation
                         <input
-                            value={consultInfo.previousMentorship}
                             type='radio'
                             name='previousMentorship'
-                            id='None'
+                            value='None'
                         />None
                     </div>
                 </div>
                 {/* Preffered Contact Method */}
-                <div>
+                <div onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}>
                     <input
-                        value={consultInfo.preferredContact}
                         type='radio'
                         name='preferredContact'
-                        id='E-mail'
-                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                        value='E-mail'
+                        
                     />E-mail
                     <input
-                        value={consultInfo.preferredContact}
                         type='radio'
                         name='preferredContact'
-                        id='Video Conference'
-                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                        value='Video Conference'
+                        
                     />Video Conference
-                    <input
-                        value={consultInfo.preferredContact}
+                    <input 
                         type='radio'
                         name='preferredContact'
-                        id='Phone Conference'
-                        onChange={ e => setConsultInfo({ ...consultInfo, preferredContact: e.target.value})}
+                        value='Phone Conference'
+                       
                     />Phone Conference
                 </div>
                 
@@ -151,8 +143,8 @@ const NewConsultForm = () => {
                 <div>
                     <label>Phone Number</label>
                     <input 
-                        value={consultInfo.contactInfo}
-                        onChange={e => setConsultInfo({...consultInfo, contactInfo: e.target.value})}
+                        value={consultInfo.contactInfo.phoneNumber}
+                        onChange={e => setConsultInfo({...consultInfo, contactInfo: {phoneNumber: e.target.value}})}
                         className='form-control'
                         id='contactInfo'
                         name='contactInfo'

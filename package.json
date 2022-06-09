@@ -4,6 +4,7 @@
   "description": "The beginnings of something great!\r This Repo will be updated as the prject goes along!",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.3.5",
