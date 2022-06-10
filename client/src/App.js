@@ -1,15 +1,19 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './components/Home'
 import NewConsultForm from './components/NewConsultForm'
 import './App.css';
+import Footer from './components/Footer'
 
 function App() {
-  return (
-    <div className="App">
-      <Home />
-      <NewConsultForm />
-    </div>
-  );
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home />}/>
+        <Route exact path='/ConsultForm' element={<NewConsultForm />}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+  )
 }
 
 export default App;
