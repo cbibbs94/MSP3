@@ -8,7 +8,7 @@ const cors =require('cors')
 const PORT = process.env.PORT
 const app = express()
 app.use(cors({
-    origin: 'http://localhost:300',
+    origin: 'http://localhost:3000',
     credentials: true
 }))
 app.use(express.json())
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //Consultform Routes
 app.use('/consultForm', require('./controllers/consult_controller.js'))
-app.use('/consultUser', require('./controllers/consult_users'))
+app.use('/consultUser', require('./controllers/consult_NewUsers'))
 app.use('/consultAuth', require('./controllers/consult_auth_controller'))
 
 //Port Connection

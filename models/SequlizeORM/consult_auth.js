@@ -10,16 +10,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   consult_auth.init({
-    user_Id: {
+    user_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoincrement: true
+      autoIncrement: true
     },
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    last_name: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -30,8 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     password_storage: DataTypes.STRING
   }, {
     sequelize,
-    underscored: true,
     modelName: 'consult_auth',
+    
   });
   return consult_auth;
 };

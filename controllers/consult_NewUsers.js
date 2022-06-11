@@ -2,20 +2,23 @@ const router = require('express').Router()
 const db = require("../models/SequlizeORM")
 const bcrypt = require('bcrypt')
 
-const { User } = db
+const { consult_auth } = db
 
 router.post('/', async(req, res) => {
+   try{
     let {password, ...rest} = req.body;
-    console.log(...rest)
-    const user = await User.create({
+    console.log(req.body)
+    const user = await consult_auth.create({
         ...rest,
         password_storage: await bcrypt.hash(password, 10)
     })
     res.json(user)
-}) 
-
+   } catch(err) {
+     console.log(err)
+   }   
+})
 router.get('/', async (req, res) => {
-    const users = await User.findAll()
+    const users = await consult_auth.findAll()
     res.json(users)
 })
 
