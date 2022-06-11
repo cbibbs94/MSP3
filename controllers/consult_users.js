@@ -12,7 +12,7 @@ router.post('/', async(req, res) => {
         password_storage: await bcrypt.hash(password, 10)
     })
     res.json(user)
-})
+}) 
 
 router.get('/', async (req, res) => {
     const users = await User.findAll()
