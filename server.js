@@ -7,20 +7,26 @@ const cors =require('cors')
 // Middleware and Configs
 const PORT = process.env.PORT
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:300',
+    credentials: true
+}))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 
 
 //Routes
-app.get('/', (req, res) => {
-    res.json({
-        message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
-    })
-})
+// app.get('/', (req, res) => {
+//     res.json({
+//         message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
+//     })
+// })
 
 //Consultform Routes
 app.use('/consultForm', require('./controllers/consult_controller.js'))
+app.use('/consultUser', require('./controllers/consult_users'))
+app.use('/consultAuth', require('./controllers/consult_auth_controller'))
 
 //Port Connection
 app.listen(PORT, () => {
