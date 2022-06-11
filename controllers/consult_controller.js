@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const db = require("../models")
-const ConsultForm = require("../models/Consultform")
+const db = require("../models/MongooseORM")
+const ConsultForm = require("../models/MongooseORM/Consultform")
 
 //post route
 router.post('/', (req, res) => {
