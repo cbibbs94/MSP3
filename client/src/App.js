@@ -3,6 +3,7 @@ import Home from './components/Home'
 import NewConsultForm from './components/NewConsultForm'
 import './App.css';
 import Footer from './components/Footer'
+import NewUserSignUp from './components/NewUserSignup';
 
 function App() {
   return(
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />}/>
         <Route exact path='/ConsultForm' element={<NewConsultForm />}/>
+        <Route exact path='/SignUp' element={<NewUserSignUp />}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
