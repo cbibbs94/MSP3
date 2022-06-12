@@ -3,11 +3,12 @@ const db = require('../models/SequlizeORM')
 const bcrypt = require('bcrypt')
 const jwt = require('json-web-token')
 
-const { User } = db
+const { consult_auth } = db
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     
-    let user = await User.findOne({
+    let user = await consult_auth.findOne({
         where: {email: req.body.email}
     })
 
