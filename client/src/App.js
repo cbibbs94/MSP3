@@ -4,6 +4,9 @@ import NewConsultForm from './components/NewConsultForm'
 import './App.css';
 import Footer from './components/Footer'
 import NewUserSignUp from './components/NewUserSignup';
+import CurrentUserProvider from './contexts/CurrentUser';
+import UserLogin from './components/UserLogin';
+
 
 function App() {
   return(
@@ -11,8 +14,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />}/>
-          <Route exact path='/ConsultForm' element={<NewConsultForm />}/>
-          <Route exact path='/SignUp' element={<NewUserSignUp />}/>
+          <Route exact path='/ConsultForm' element={<NewConsultForm />} />
+          <Route exact path='/SignUp' element={<NewUserSignUp />} />
+          <Route exact path='/Login' element={<UserLogin />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
