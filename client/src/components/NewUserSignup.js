@@ -1,6 +1,10 @@
 import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router'
 
 const NewUserSignUp = () => {
+
+	const navigate = useNavigate()
+
     const [user , setUser] =useState({
         firstName: '',
         lastName: '',
@@ -20,6 +24,7 @@ const NewUserSignUp = () => {
             body: JSON.stringify(user)
         })
 
+		navigate('/')
         
     }
 

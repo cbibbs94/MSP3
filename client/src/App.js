@@ -6,12 +6,13 @@ import Footer from './components/Footer'
 import NewUserSignUp from './components/NewUserSignup';
 import CurrentUserProvider from './contexts/CurrentUser';
 import UserLogin from './components/UserLogin';
-
+import NavBar from './components/NavBar'
 
 function App() {
   return(
     <CurrentUserProvider>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route exact path='/' element={<Home />}/>
           <Route exact path='/ConsultForm' element={<NewConsultForm />} />

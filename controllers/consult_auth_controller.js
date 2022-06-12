@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const db = require('../models/SequlizeORM')
+const db = require('../models/SequelizeORM')
 const bcrypt = require('bcrypt')
 const jwt = require('json-web-token')
 

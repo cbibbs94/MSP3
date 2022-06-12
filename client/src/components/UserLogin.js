@@ -1,7 +1,10 @@
 import {useState, useContext} from 'react'
 import { CurrentUser } from '../contexts/CurrentUser'
+import { useNavigate } from 'react-router'
 
 const UserLogin = () => {
+
+    const navigate = useNavigate()
     
     const { setCurrentUser } = useContext(CurrentUser)
 
@@ -28,6 +31,7 @@ const UserLogin = () => {
         if (response.status === 200) {
             setCurrentUser(data.user)
             localStorage.setItem('token', data.token)
+            navigate('/')
         } else {
             setErrMessage(data.message)
         }
