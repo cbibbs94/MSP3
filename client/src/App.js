@@ -7,14 +7,16 @@ import NewUserSignUp from './components/NewUserSignup';
 
 function App() {
   return(
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<Home />}/>
-        <Route exact path='/ConsultForm' element={<NewConsultForm />}/>
-        <Route exact path='/SignUp' element={<NewUserSignUp />}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+    <CurrentUserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/ConsultForm' element={<NewConsultForm />}/>
+          <Route exact path='/SignUp' element={<NewUserSignUp />}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </CurrentUserProvider>
   )
 }
 
