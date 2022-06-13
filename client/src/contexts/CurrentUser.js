@@ -7,7 +7,7 @@ function CurrentUserProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null)
     useEffect(() => {
         const loggedInUser = async () => {
-            let response = await fetch('http://localhost:5001/consultAuth/profile', {
+            let response = await fetch('/consultAuth/profile', {
                 headers: {
                     'Authorization' : `Bearer ${localStorage.getItem('token')}`
                 }

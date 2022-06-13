@@ -15,7 +15,7 @@ const NewConsultForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await fetch('http://localhost:5001/consultForm', {
+        await fetch('/consultForm', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'

@@ -9,12 +9,12 @@ const NavBar = () => {
 
     let loginButtons = (
         <>
-            <li style={{ float: 'right' }}>
+            <li >
                 <a href="#" onClick={() => navigate("/signup")}>
                     Sign Up
                 </a>
             </li>
-            <li style={{ float: 'right' }}>
+            <li >
                 <a href="#" onClick={() => navigate("/login")}>
                     Login
                 </a>

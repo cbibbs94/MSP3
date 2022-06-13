@@ -2,6 +2,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors =require('cors')
+const path = require('path')
 
 
 // Middleware and Configs
@@ -13,6 +14,8 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+app.use(express.static(path.resolve(__dirname, './client/build',)))
 
 
 
@@ -27,6 +30,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/consultForm', require('./controllers/consult_controller.js'))
 app.use('/consultUser', require('./controllers/consult_NewUsers'))
 app.use('/consultAuth', require('./controllers/consult_auth_controller'))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+})
 
 //Port Connection
 app.listen(PORT, () => {

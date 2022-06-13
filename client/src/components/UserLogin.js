@@ -17,7 +17,7 @@ const UserLogin = () => {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        const response = await fetch('http://localhost:5001/consultAuth/', {
+        const response = await fetch('/consultAuth/', {
             method: 'POST',
             credentials: 'include',
             headers: {

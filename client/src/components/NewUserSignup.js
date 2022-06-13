@@ -16,7 +16,7 @@ const NewUserSignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await fetch('http://localhost:5001/consultUser', {
+        await fetch('/consultUser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
