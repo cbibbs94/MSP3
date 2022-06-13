@@ -19,7 +19,7 @@ app.use(express.static(path.resolve(__dirname, './client/build',)))
 
 
 
-Routes
+//Routes
 app.get('/', (req, res) => {
     res.json({
         message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
