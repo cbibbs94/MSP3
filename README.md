@@ -22,3 +22,5 @@ update: NewConsultForm on the front end has finally been completed and sends dat
 update: Two days before deadline and we have a lot of work to do. Just Finished a Context component and i hope to make it better as i work on the project. Both databases have been set up and are working perfectly. hope to have a lot more done by tomorrow morning. 
 
 update: Deadline is tomorrow!! Everything is working enough at the moment. need to tweak the JWT so the user stays logged in. Otherwise Functionality is done and now its time to make this thing PRETTY!!!!
+
+update: Well Deadline is in 3 hours and i need to deploy. So this is the last update before presentation. Will work on styling more once rpesentation is over.
