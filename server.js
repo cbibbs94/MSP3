@@ -9,7 +9,6 @@ const path = require('path')
 const PORT = process.env.PORT
 const app = express()
 app.use(cors({
-    origin: 'http://localhost:3000',
     credentials: true
 }))
 app.use(express.json())
@@ -19,12 +18,12 @@ app.use(express.static(path.resolve(__dirname, './client/build',)))
 
 
 
-//Routes
-// app.get('/', (req, res) => {
-//     res.json({
-//         message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
-//     })
-// })
+Routes
+app.get('/', (req, res) => {
+    res.json({
+        message: 'API Landing Zone! Project is currently under Development, Standby by for some dope stuff!'
+    })
+})
 
 //Consultform Routes
 app.use('/consultForm', require('./controllers/consult_controller.js'))

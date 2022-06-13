@@ -17,7 +17,7 @@ const UserLogin = () => {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        const response = await fetch('/consultAuth/', {
+        const response = await fetch('/consultAuth', {
             method: 'POST',
             credentials: 'include',
             headers: {
