@@ -1,7 +1,6 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './components/Home'
 import NewConsultForm from './components/NewConsultForm'
-import './App.css';
 import Footer from './components/Footer'
 import NewUserSignUp from './components/NewUserSignup';
 import CurrentUserProvider from './contexts/CurrentUser';
