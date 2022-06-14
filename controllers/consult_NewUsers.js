@@ -17,6 +17,7 @@ router.post('/', async(req, res) => {
      console.log(err)
    }   
 })
+
 router.get('/', async (req, res) => {
     const users = await consult_auth.findAll()
     res.json(users)
