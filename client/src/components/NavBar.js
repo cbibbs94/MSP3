@@ -31,7 +31,7 @@ const NavBar = () => {
     }
 
     return (
-        <nav>
+        <nav className='nav-bar'>
             <ul>
                 <li>
                     <a href="#" onClick={() => navigate("/")}>
