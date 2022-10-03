@@ -23,4 +23,4 @@ update: Two days before deadline and we have a lot of work to do. Just Finished 
 
 update: Deadline is tomorrow!! Everything is working enough at the moment. need to tweak the JWT so the user stays logged in. Otherwise Functionality is done and now its time to make this thing PRETTY!!!!
 
-update: Well Deadline is in 3 hours and i need to deploy. So this is the last update before presentation. Will work on styling more once rpesentation is over.
+update: Well Deadline is in 3 hours and i need to deploy. So this is the last update before presentation. Will work on styling more once presentations are over.
